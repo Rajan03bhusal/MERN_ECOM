@@ -40,10 +40,10 @@ router.post("/login", async (req, res) => {
     if (!user) {
       throw new Error("User not found");
     }
-    // if user is active or not
-    if (user.status !== "active") {
-      throw new Error("User is blocked,Please contact admin");
-    }
+    // // if user is active or not
+    // if (user.status !== "active") {
+    //   throw new Error("User is blocked,Please contact admin");
+    // }
 
     // create and assign token
     const token = jwt.sign({ userId: user._id }, process.env.TOKEN_SECRET, {
